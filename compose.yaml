@@ -1,0 +1,15 @@
+services:
+  rails:
+    build:
+      context: .
+    volumes:
+      - bundle:/usr/local/bundle
+      - .:/src/apps/rails
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
+
+volumes:
+  bundle:
+    driver: local
