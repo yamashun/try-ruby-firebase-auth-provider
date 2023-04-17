@@ -1,0 +1,2 @@
+class AuthorizationCode < ApplicationRecord
+end
