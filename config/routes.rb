@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/userinfo', to: 'protected_resources#userinfo'
   post '/userinfo', to: 'protected_resources#userinfo'
 
-  get '/.well-known/openid-configuration'
+  get '/.well-known/openid-configuration', to: 'openid_configuration#show'
 
   get '/test_page', to: 'authorization#test_page'
 end

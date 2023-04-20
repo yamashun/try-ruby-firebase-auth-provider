@@ -122,7 +122,7 @@ class AuthorizationController < ApplicationController
   def build_id_token(user, client, scope)
     payload = {
       iss: "https://example.com",
-      sub: user.id,
+      sub: user.id, # 本当はclient毎にsubを発行する必要があるが検証用のためuser.idをそのまま使う
       aud: client.client_id,
       exp: 5.minutes.from_now.to_i,
       iat: Time.current.to_i
